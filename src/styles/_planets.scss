@@ -1,0 +1,84 @@
+@use "variables";
+
+.planet {
+  &--earth {
+    text-align: end;
+    background-image: linear-gradient(90deg, #c1936b, #3a3939, #010101);
+    .planet__details__name {
+      color: #c1936b;
+      text-shadow: 1px 1px #010101;
+    }
+    .planet__details {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-end;
+      justify-content: space-between;
+    }
+  }
+  &--mars {
+    background-image: linear-gradient(270deg, #c1936b, #3a3939, #010101);
+    .planet__details__name {
+      color: #c1936b;
+      text-shadow: 1px 1px #010101;
+    }
+    .planet__details {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      justify-content: space-between;
+    }
+  }
+
+  &--image-left {
+    .container {
+      flex-direction: row-reverse;
+    }
+  }
+
+  .container {
+    box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.8);
+    display: flex;
+    gap: 40px;
+    padding: 24px;
+  }
+
+  &__image {
+    height: 300px;
+    width: 300px;
+    border-radius: 50%;
+    color: #fff;
+  }
+
+  &__details {
+    width: 100%;
+    &__name {
+      font-size: 48px;
+      font-weight: bold;
+    }
+    &__description {
+      font-size: 24px;
+    }
+
+    .watchButton {
+      width: 100px;
+      height: 50px;
+      border: 2px solid #010101;
+      border-radius: 4px;
+      font-size: 24px;
+      color: #010101;
+      background-color: #c1936b;
+      cursor: pointer;
+
+      &:hover {
+        transform: scale(1.05);
+      }
+    }
+  }
+
+  @media (max-width: 640px) {
+    .container {
+      flex-direction: column;
+      align-items: center;
+    }
+  }
+}

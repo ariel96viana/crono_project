@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Space Time</title>
+    <link rel="stylesheet" href="styles/main.scss" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+    href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700;900&display=swap"
+    rel="stylesheet"
+  </head>
+  <body>
+    <header class="header">
+      <div class="container">
+        <div class="logo"></div>
+        <div class="navbar"></div>
+      </div>
+    </header>
+    <section class="hero">
+      <div class="container">
+        <img class="hero__image" src="./images/hero_watch.png" alt="" />
+        <div class="hero__content">
+          <p class="hero__title">Quanto falta para seu próximo evento:</p>
+          <div class="hero__description">
+            <p id="cronometro"></p>
+
+            <form class="hero__description__form">
+              <div class="form_container">
+                <label class="hero__description__form__label" for="day"
+                  >Dia:</label
+                >
+                <input
+                  class="hero__description__form__input"
+                  type="number"
+                  min="1"
+                  max="31"
+                  id="day"
+                  name="day"
+                  placeholder="31"
+                  required
+                />
+                <label
+                  class="hero__description__form__label months"
+                  for="months"
+                  >Mês:</label
+                >
+                <select
+                  id="months"
+                  class="hero__description__form__input"
+                  required
+                >
+                  <option class="item" value="Jan">Janeiro</option>
+                  <option class="item" value="Feb">Fevereiro</option>
+                  <option class="item" value="Mar">Março</option>
+                  <option class="item" value="Apr">Abril</option>
+                  <option class="item" value="May">Maio</option>
+                  <option class="item" value="Jun">Junho</option>
+                  <option class="item" value="Jul">Julho</option>
+                  <option class="item" value="Aug">Agosto</option>
+                  <option class="item" value="Sep">Setembro</option>
+                  <option class="item" value="Oct">Outubro</option>
+                  <option class="item" value="Nov">Novembro</option>
+                  <option class="item" value="Dec">Dezembro</option>
+                </select>
+                <label class="hero__description__form__label" for="year"
+                  >Ano:</label
+                >
+                <input
+                  class="hero__description__form__input"
+                  type="number"
+                  id="year"
+                  name="year"
+                  placeholder="2023"
+                  required
+                />
+              </div>
+              <button class="hero__description__form__button" type="submit">
+                Calcular
+              </button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="planet planet--image-left planet--earth">
+      <div class="container">
+        <div class="planet__details">
+          <div>
+            <h2 class="planet__details__name">Cronômetro</h2>
+            <p class="planet__details__description">
+              Clique no botão para iniciar o cronômetro:
+            </p>
+            <p class="cronometer__counter">00h:00m:00s:00d</p>
+          </div>
+          <button type="button" class="watchButton cronometer__button">
+            Iniciar
+          </button>
+        </div>
+        <img
+          src="./images/relogio.svg"
+          class="planet__image"
+          alt="Cronômetro"
+        />
+      </div>
+    </section>
+    <section class="planet planet--mars">
+      <div class="container">
+        <div class="planet__details">
+          <div>
+            <h2 class="planet__details__name">Timer</h2>
+            <p
+              class="planet__details__description planet__details__description--en"
+            >
+              Escolha um valor em minutos para iniciar o contador:
+            </p>
+            <p class="timer__counter">00h:00m:00s:00d</p>
+          </div>
+          <button type="button" class="watchButton timer__button">
+            Iniciar
+          </button>
+        </div>
+        <div class="imageBackground">
+          <img src="./images/ampulheta.svg" class="planet__image" alt="Timer" />
+        </div>
+      </div>
+    </section>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="./scripts/main.js"></script>
+  </body>
+</html>

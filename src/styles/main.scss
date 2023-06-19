@@ -1,0 +1,21 @@
+@use "variables";
+@use "hero";
+@use "planets";
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: roboto, sans-serif;
+  color: variables.$textColor;
+}
+
+.container {
+  max-width: 1240px;
+  width: 90%;
+  margin: 0 auto;
+
+  @media (max-width: 768px) {
+    width: 100%;
+  }
+}
