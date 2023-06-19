@@ -92,11 +92,19 @@
             <p class="planet__details__description">
               Clique no botão para iniciar o cronômetro:
             </p>
-            <p class="cronometer__counter">00h:00m:00s:00d</p>
+            <p class="cronometer__counter">--h : --m : --s : ---d</p>
           </div>
-          <button type="button" class="watchButton cronometer__button">
-            Iniciar
-          </button>
+          <div class="buttons_container">
+            <button type="button" class="watchButton cronometer__button start">
+              Iniciar
+            </button>
+            <button
+              type="button"
+              class="watchButton cronometer__button stop block"
+            >
+              Parar
+            </button>
+          </div>
         </div>
         <img
           src="./images/relogio.svg"
@@ -116,6 +124,7 @@
               Escolha um valor em minutos para iniciar o contador:
             </p>
             <p class="timer__counter">00h:00m:00s:00d</p>
+            <p class="cronometer__counter">EM BREVE</p>
           </div>
           <button type="button" class="watchButton timer__button">
             Iniciar

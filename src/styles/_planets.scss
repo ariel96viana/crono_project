@@ -29,6 +29,12 @@
     }
   }
 
+  .cronometer__counter {
+    font-size: 24px;
+    margin: 8px 0;
+    border-bottom: 2px solid #c1936b;
+  }
+
   &--image-left {
     .container {
       flex-direction: row-reverse;
@@ -73,6 +79,11 @@
         transform: scale(1.05);
       }
     }
+
+    .block {
+      pointer-events: none;
+    }
+
     .timer__button {
       color: #c1936b;
       background-color: #101010;

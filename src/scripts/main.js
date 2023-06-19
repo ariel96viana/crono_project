@@ -1,11 +1,13 @@
 AOS.init();
 
-const cronometerButton = document.querySelector(".cronometer__button");
+const cronometerButton = document.querySelector(".start");
+const cronometerStop = document.querySelector(".stop");
 
 const daysInMs = 1000 * 60 * 60 * 24;
 const hoursInMs = 1000 * 60 * 60;
 const minutesInMs = 1000 * 60;
 const secondsInMs = 1000;
+let cronometring;
 
 const formSubmit = document.getElementsByClassName(
   "hero__description__form"
@@ -24,6 +26,7 @@ if (document.cookie) {
 
 formSubmit.addEventListener("submit", function (e) {
   e.preventDefault;
+
   const day = document.getElementById("day").value;
   const month = document.getElementById("months").value;
 
@@ -101,26 +104,41 @@ function startCronometer() {
 
 function timer() {}
 cronometerButton.addEventListener("click", function () {
+  cronometerButton.innerText = "Iniciar";
   const valueCount = 0;
   const now = new Date();
   const startCronometer = now.getTime();
   console.log(startCronometer);
   const cronometer = document.getElementsByClassName("cronometer__counter");
+
+  cronometerButton.classList.add("block");
+  cronometerStop.classList.remove("block");
+
   let counting = startCronometer;
 
-  const cronometring = setInterval(function () {
+  cronometring = setInterval(function () {
     start = new Date();
     counting = start.getTime();
     let trul = counting - startCronometer;
     const hoursCount = Math.floor((trul % daysInMs) / hoursInMs);
     const minutesCount = Math.floor((trul % hoursInMs) / minutesInMs);
     const secondsCount = Math.floor((trul % minutesInMs) / secondsInMs);
-    const dcm = Math.ceil((trul % secondsInMs) / 100);
-    const cm = Math.ceil((trul % secondsInMs) / 10);
-    const mm = Math.ceil(trul % secondsInMs);
-    cronometer[0].innerText = `${hoursCount}h:${minutesCount}m:${secondsCount}s:${
+    const dcm = +Math.ceil((trul % secondsInMs) / 100);
+    const cm = Math.floor((trul % secondsInMs) / 10);
+    const mm = Math.floor(trul % secondsInMs);
+
+    cronometer[0].innerText = `${hoursCount}h : ${minutesCount}m : ${secondsCount}s : ${
       (dcm, cm, mm)
     }ms`;
     counting++;
   }, 1);
 });
+cronometerStop.addEventListener("click", function () {
+  stopTime();
+  cronometerButton.classList.remove("block");
+  cronometerStop.classList.add("block");
+  cronometerButton.innerText = "Reiniciar";
+});
+function stopTime() {
+  clearInterval(cronometring);
+}
